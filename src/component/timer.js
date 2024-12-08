@@ -15,7 +15,7 @@ const Timer = () => {
   // Fetch points from the backend when the component is mounted
   useEffect(() => {
     // Get the saved points from the backend
-    axios.get('http://https://study-backend-k311.onrender.com/api/getPoints')
+    axios.get('https://study-backend-k311.onrender.com/api/getPoints')
       .then(response => {
         setPoints(response.data.points); // Set the fetched points
       })
@@ -46,7 +46,7 @@ const Timer = () => {
 
     // Send the points to the backend and store it in MongoDB
     try {
-      await axios.post('http://localhost:5000/api/savePoints', { points: newPoints });
+      await axios.post('https://study-backend-k311.onrender.com/api/savePoints', { points: newPoints });
       console.log('Points saved successfully!');
     } catch (error) {
       console.error('Error saving points:', error);
