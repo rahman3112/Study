@@ -1,0 +1,86 @@
+/* Centering the entire container (clock + timer + buttons) */
+h1{
+    color: #66FcF1;
+}
+body{
+    background-color:#0b0c10;
+}
+.clock-container {
+    position: relative;
+    top: -40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+    font-family: Arial, sans-serif;
+  }
+  
+  /* The clock face */
+  .clock {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 10px solid #1F2833;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    background-color: #000000;
+  }
+  
+  /* The second hand */
+  .second-hand {
+    position: absolute;
+    width: 2px;
+    height: 80px;
+    background-color: rgb(255, 255, 255);
+    top: 10px; /* Adjust the positioning of the hand */
+    left: 50%;
+    transform-origin: 50% 100%;
+    transform: rotate(0deg); /* Initial rotation */
+    transition: transform 1s linear; /* Smooth rotation for each second */
+  }
+  
+  /* Timer text */
+  h2 {
+    font-size: 22px;
+    color: #757575;
+    margin-bottom: 20px;
+  }
+  h4 {
+    position: relative;
+    top: -47px;
+    right: 4px;
+    font-size: 24px;
+    color: #757575;
+    margin-bottom: 20px;
+  }
+  
+  /* Button styling */
+  .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .buttons button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 17px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    /* background-color: #1F2833; */
+    color: #45A29E;
+    font-weight: 500;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .buttons button:hover {
+    border: 1px solid white;
+    /* background-color: #a0a0a0; */
+  }
+  
