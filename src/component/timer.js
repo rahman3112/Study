@@ -15,7 +15,7 @@ const Timer = () => {
   // Fetch points from the backend when the component is mounted
   useEffect(() => {
     // Get the saved points from the backend
-    axios.get('http://localhost:5000/api/getPoints')
+    axios.get('http://https://study-backend-k311.onrender.com/api/getPoints')
       .then(response => {
         setPoints(response.data.points); // Set the fetched points
       })

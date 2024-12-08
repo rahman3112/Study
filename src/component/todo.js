@@ -10,7 +10,7 @@ const Todo = () => {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/tasks");
+        const response = await axios.get("http://https://study-backend-k311.onrender.com/api/tasks");
         setTasks(response.data);
       } catch (error) {
         console.error("Error fetching tasks:", error);
@@ -24,7 +24,7 @@ const Todo = () => {
   const handleAddTask = async () => {
     const newTask = { text: "New Task", isChecked: false }; // Provide a default text
     try {
-      const response = await axios.post("http://localhost:5000/api/tasks", newTask);
+      const response = await axios.post("http://https://study-backend-k311.onrender.com/api/tasks", newTask);
       setTasks([...tasks, response.data]);
     } catch (error) {
       console.error("Error adding task:", error);
@@ -35,7 +35,7 @@ const Todo = () => {
   // Update task text or isChecked
   const handleTaskChange = async (id, updates) => {
     try {
-      const response = await axios.put(`http://localhost:5000/api/tasks/${id}`, updates);
+      const response = await axios.put(`http://https://study-backend-k311.onrender.com/api/tasks/${id}`, updates);
       setTasks(tasks.map((task) => (task._id === id ? response.data : task)));
     } catch (error) {
       console.error("Error updating task:", error);
@@ -51,7 +51,7 @@ const Todo = () => {
   // Delete selected tasks
   const handleConfirmDelete = async () => {
     try {
-      await Promise.all(selectedTasks.map((id) => axios.delete(`http://localhost:5000/api/tasks/${id}`)));
+      await Promise.all(selectedTasks.map((id) => axios.delete(`http://https://study-backend-k311.onrender.com/api/tasks/${id}`)));
       setTasks(tasks.filter((task) => !selectedTasks.includes(task._id)));
       setSelectedTasks([]);
       setIsDeleteMode(false);
